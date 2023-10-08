@@ -145,7 +145,6 @@ void Conjunto::mergeSort(){
 }
 
 void Conjunto::mergeSort(int *array, int inicio, int fim){
-    ++nmr_execucoes;
     if (inicio < fim){
         int meio = (inicio + fim) / 2;
         mergeSort(array, inicio, meio);
@@ -211,7 +210,6 @@ void Conjunto::heapSort(int *array, int& tamanho_vetor){
 }
 
 void Conjunto::heapify(int *array, int& tamanho_vetor, int indice){
-    ++nmr_execucoes;
     int largest = indice;
     int left = 2*indice+1;
     int right = 2*indice+2;
@@ -247,7 +245,6 @@ int Conjunto::partition(int *array, int& low, int& high){
     int pivot = array[high];
     int i = (low - 1);
     for (int j = low; j < high; ++j){
-        ++nmr_execucoes;
         if (array[j] <= pivot){
             ++i;
             swap(&array[i], &array[j]);
